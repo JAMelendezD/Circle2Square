@@ -6,9 +6,21 @@ Interpolation between a circle and a square
 python gen_mem.py 7
 ```
 
-## 2D He-Ar Gas
+## Resampling of curves to keep even density
 
 <p align="center">
-  <img width="300" src="images/dens.gif">
-  <img width="300" src="images/dots.gif">
+  <img width="500" src="images/dens.gif">
+</p>
+
+## Constant number of points
+
+<p align="center">
+  <img width="500" src="images/dots.gif">
+</p>
+
+## Comparision
+
+<p align="center">
+  <img width="500" src="images/dens.gif">
+  <img width="500" src="images/dots.gif">
 </p>
