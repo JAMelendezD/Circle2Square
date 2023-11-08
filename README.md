@@ -18,7 +18,7 @@ python gen_mem.py 7
   <img width="500" src="images/dots.gif">
 </p>
 
-## Comparision
+## Comparison
 
 <p align="center">
   <img width="250" src="images/dens.gif">
