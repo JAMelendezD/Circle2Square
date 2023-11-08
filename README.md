@@ -13,5 +13,5 @@ python gen_mem.py 7
 </p>
 
 <p align="center">
-  <img width="600" src="images/dots.gif">
+  <img width="500" src="images/dots.gif">
 </p>
