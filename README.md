@@ -21,6 +21,6 @@ python gen_mem.py 7
 ## Comparision
 
 <p align="center">
-  <img width="500" src="images/dens.gif">
-  <img width="500" src="images/dots.gif">
+  <img width="250" src="images/dens.gif" hspace = 10>
+  <img width="250" src="images/dots.gif">
 </p>
