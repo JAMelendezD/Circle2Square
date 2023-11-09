@@ -81,3 +81,13 @@ Eventually for a large enough $\sigma$ the spacing converges to a final system.
   <em>eps = 1.9</em>
 </p>
 
+## 3D visualization 
+
+<p align="center">
+  <img width="250" src="images/mem_inter.png">
+  <em>eps = 1.5</em>
+  <img width="250" src="images/mem_nointer.png">
+  <em>eps = 1.9</em>
+</p>
+
+
