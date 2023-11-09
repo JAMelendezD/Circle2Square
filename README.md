@@ -65,9 +65,3 @@ We also included the effect of the $\sigma$ parameter that allows to further mod
 
 Eventually for a large enough $\sigma$ ther
 Based on this we finally provide a comparison between both models and the selected value of $\sigma = 11$ that optimizes the average to a value of 1.874 which is only 0.001 off the target value.
-
-<p align="center">
-  <img width="250" src="images/dots.png">
-  <img width="250" src="images/dens_default.png">
-  <img width="250" src="images/dens_opt.png">
-</p>
