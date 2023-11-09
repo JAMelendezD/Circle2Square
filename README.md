@@ -47,3 +47,5 @@ We also included the effect of the $\sigma$ parameter that allows to further mod
   <img width="250" src="images/dens_mod_12.png">
   <em>sigma = 12</em>
 </p>
+
+Based on this we finally provide a comparison between both models and the selected value of $\sigma = 11$ 
