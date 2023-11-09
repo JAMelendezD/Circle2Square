@@ -23,6 +23,6 @@ python gen_mem.py 7
 Here we compare the difference between both algorithms. In both cases we use a linear interpolation between both shapes. We first compare the difference between the default behaviour of both.
 
 <p align="center">
-  <img width="250" src="images/dens.gif",  title="Resampling">
-  <img width="250" src="images/dots.gif",  title="No Resampling">
+  <img width="300" src="images/dens_default.png",  title="Resampling">
+  <img width="300" src="images/dots.png",  title="No Resampling">
 </p>
