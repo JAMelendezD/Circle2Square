@@ -25,11 +25,8 @@ Here we compare the difference between both algorithms. In both cases we use a l
 
 
 <p align="center">
-  <figure>
-  <img width="300" src="images/dens_default.png" />
-  <figcaption>This is my caption text.</figcaption>
-  </figure>
-  <img width="300" src="images/dots.png",  alt>
+  <img width="300" src="images/dens_default.png">
+  <img width="300" src="images/dots.png">
   <em>image_caption</em>
 </p>
 
