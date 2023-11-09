@@ -85,9 +85,9 @@ Eventually for a large enough $\sigma$ the spacing converges to a final system.
 
 <p align="center">
   <img width="250" src="images/mem_inter.png">
-  <em>eps = 1.5</em>
+  <em>Interpolation</em>
   <img width="250" src="images/mem_nointer.png">
-  <em>eps = 1.9</em>
+  <em>No interpolation</em>
 </p>
 
 
