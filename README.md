@@ -43,23 +43,23 @@ We also included the effect of the $\sigma$ parameter that allows to further mod
 </p>
 
 <p align="center">
-  <img width="300" src="images/dens_mod_8.png">
+  <img width="250" src="images/dens_mod_8.png">
   <em>sigma = 8</em>
-  <img width="300" src="images/dens_mod_12.png">
+  <img width="250" src="images/dens_mod_12.png">
   <em>sigma = 12</em>
 </p>
 
 <p align="center">
-  <img width="300" src="images/dens_mod_16.png">
+  <img width="250" src="images/dens_mod_16.png">
   <em>sigma = 16</em>
-  <img width="300" src="images/dens_mod_20.png">
+  <img width="250" src="images/dens_mod_20.png">
   <em>sigma = 20</em>
 </p>
 
 <p align="center">
-  <img width="300" src="images/dens_mod_30.png">
+  <img width="250" src="images/dens_mod_30.png">
   <em>sigma = 30</em>
-  <img width="300" src="images/dens_mod_40.png">
+  <img width="250" src="images/dens_mod_40.png">
   <em>sigma = 40</em>
 </p>
 
