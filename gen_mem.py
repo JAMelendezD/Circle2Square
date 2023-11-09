@@ -121,6 +121,20 @@ def calculate_lambdas(size, exponent, exp_scale):
         lambdas = np.exp((1-1/(lambdas+1e-8)**exponent))
     return lambdas
 
+def pbc_min_dist(pos, box):
+    '''
+    Compute the minumum distance of an array of 3d positions with itself
+    taking into considerations periodic boundary conditions given a box
+    '''
+
+    n = len(pos)
+    r_mins = []
+    for i in range(n):
+        vectors = np.remainder(pos[i] - pos + box[0]/2.0, box[0]) - box[0]/2.0
+        rs = np.linalg.norm(vectors, axis = 1)
+        r_mins.append(np.min(rs[rs != 0]))
+    return r_mins
+
 def main():
 
     spacing = 1.875 # Minima of vdw CA-CA AlA
@@ -143,57 +157,48 @@ def main():
 
     circles = []
     for i in range(num_rects):
-        #circle = generate_circle(main_radius+spacing*i, spacing, 0)
-        circle = generate_circle(main_radius+spacing*i, spacing, len(rectangles[i]))
+        circle = generate_circle(main_radius+spacing*i, spacing, 0)
+        #circle = generate_circle(main_radius+spacing*i, spacing, len(rectangles[i]))
         circles.append(circle)
 
     # Generate a linear set of lambdas
 
     lambdas = calculate_lambdas(len(circles)-1, 0, False)
 
-    # # Interpolate the number of grid points between analogous rectangles and
-    # # circles to try to keep a constant density
+    # Interpolate the number of grid points between analogous rectangles and
+    # circles to try to keep a constant density
 
-    # num_points = []
-    # counter = 0
-    # for circ, rect, lamb in zip(circles, rectangles, lambdas):
-    #     n_circ, n_rect = len(circ), len(rect)
-    #     n_inter = int(round((1-lamb)*n_circ + lamb*n_rect,0))
-    #     n_inter = n_inter #- (n_circ-counter)//12
+    num_points = []
+    counter = 0
+    for circ, rect, lamb in zip(circles, rectangles, lambdas):
+        n_circ, n_rect = len(circ), len(rect)
+        n_inter = int(round((1-lamb)*n_circ + lamb*n_rect,0))
+        n_inter = n_inter - (n_circ-counter)//11
         
-    #     if n_inter % 4 != 0:
-    #         n_inter = n_inter + (-n_inter % 4)
-    #     num_points.append(n_inter)
-    #     counter += 1
+        if n_inter % 4 != 0:
+            n_inter = n_inter + (-n_inter % 4)
+        num_points.append(n_inter)
+        counter += 1
 
-    # # Using the new set of grid points generate new rectangles
+    # Using the new set of grid points generate new rectangles
 
-    # new_rectangles = []
-    # for i in range(num_rects,0,-1):
-    #     tmp_length = length - 2*spacing*(i-1)
-    #     tmp_points_grid = num_points[num_rects-i]
-    #     new_rectangles.append(generate_rectangle(tmp_length, tmp_points_grid))
+    new_rectangles = []
+    for i in range(num_rects,0,-1):
+        tmp_length = length - 2*spacing*(i-1)
+        tmp_points_grid = num_points[num_rects-i]
+        new_rectangles.append(generate_rectangle(tmp_length, tmp_points_grid))
         
-    # # Using the new set of grid points generate new circles
+    # Using the new set of grid points generate new circles
 
-    # new_circles = []
-    # for i in range(num_rects):
-    #     circle = generate_circle(main_radius+spacing*i, spacing, num_points[i])
-    #     new_circles.append(circle)
+    new_circles = []
+    for i in range(num_rects):
+        circle = generate_circle(main_radius+spacing*i, spacing, num_points[i])
+        new_circles.append(circle)
 
     # Interpolate between circles and rectangles 
 
-    #curves = generate_interpolation(lambdas, new_circles, new_rectangles)
-    curves = generate_interpolation(lambdas, circles, rectangles)
-
-    fig = plt.figure(figsize = (8,8))
-    for i in range(len(curves)):
-        plt.scatter(curves[i][:,0], curves[i][:,1], c=curves[i][:,1], cmap='rainbow', edgecolor = 'k', clip_on = False, s = 80)
-    plt.xticks([])
-    plt.yticks([])
-    plt.xlim(-extend,extend)
-    plt.ylim(-extend,extend)
-    plt.savefig(f"2d_grid_{main_radius}.png", bbox_inches = 'tight', dpi = 120, transparent=True)
+    curves = generate_interpolation(lambdas, new_circles, new_rectangles)
+    #curves = generate_interpolation(lambdas, circles, rectangles)
 
     # Bring all necessary components for output into a tinker xyz
 
@@ -201,8 +206,8 @@ def main():
     zs = np.arange(-height/2, height/2+spacing, spacing)
 
     for z in zs: 
-        #for point in new_circles[0]:
-        for point in circles[0]:
+        for point in new_circles[0]:
+        #for point in circles[0]:
             lines.append(f"{'CA':6s}{point[0]+spacing/2:12.6f}{point[1]+spacing/2:12.6f}{z:12.6f}{1:6d}\n")
             
     for z in [zs[0],zs[-1]]:
@@ -219,14 +224,29 @@ def main():
 
     # read positions of xyz to output PDB
 
-    data = np.loadtxt(f"rad_{main_radius}.xyz", skiprows=2, usecols=[1,2,3])
+    data = np.loadtxt(f"rad_{main_radius}.xyz", skiprows=1, usecols=[1,2,3])
+    N = len(data)
 
     # write PDB
 
     out_pdb = open(f"rad_{main_radius}.pdb", "w")
     box = [length+spacing,length+spacing,length+spacing]
-    write_pdb(out_pdb, box, data+length/2)
+    translated = data + length / 2
+    write_pdb(out_pdb, box, translated)
     out_pdb.close()
+
+    min_dists = pbc_min_dist(translated, box)
+    info = f"N: {N:5d} / Min: {np.min(min_dists):5.3f} / Max: {np.max(min_dists):5.3f} / Ave: {np.mean(min_dists):5.3f}"
+    print(info)
+
+    fig = plt.figure(figsize = (8,8))
+    plt.scatter(data[:, 0], data[:,1], c=np.array(min_dists)-spacing, cmap='seismic', edgecolor = 'k', clip_on = False, s = 80, vmin = -0.5, vmax = 0.5)
+    plt.xticks([])
+    plt.yticks([])
+    plt.xlim(-extend+spacing/2,extend+spacing/2)
+    plt.ylim(-extend+spacing/2,extend+spacing/2)
+    plt.title(info, color = 'white')
+    plt.savefig(f"2d_grid_{main_radius}.png", bbox_inches = 'tight', dpi = 120, transparent=True)
 
 if __name__ == '__main__':
     main()
