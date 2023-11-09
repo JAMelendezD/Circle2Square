@@ -34,10 +34,10 @@ Here we compare the difference between both algorithms. In both cases we use a l
 We also included the effect of the $\sigma$ parameter that allows to further modify the packing of the spheres for the resampling method. 
 
 <p align="center">
-  <img width="250" src="images/dens_mod_12.png",  caption="$\sigma = 12$">
-  <img width="250" src="images/dens_mod_12.png",  caption="$\sigma = 12$">
-  <img width="250" src="images/dens_mod_12.png",  caption="$\sigma = 12$">
-  <img width="250" src="images/dens_mod_12.png",  caption="$\sigma = 12$">
-  <img width="250" src="images/dens_mod_12.png",  caption="$\sigma = 12$">
-  <img width="250" src="images/dens_mod_12.png",  caption="$\sigma = 12$">
+  <img width="250" src="images/dens_mod_2.png">
+  <img width="250" src="images/dens_mod_4.png">
+  <img width="250" src="images/dens_mod_6.png">
+  <img width="250" src="images/dens_mod_8.png">
+  <img width="250" src="images/dens_mod_10.png">
+  <img width="250" src="images/dens_mod_12.png">
 </p>
