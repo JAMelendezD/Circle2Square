@@ -25,9 +25,9 @@ Here we compare the difference between both algorithms. In both cases we use a l
 
 
 <p align="center">
-  <img width="300" src="images/dens_default.png">
+  <img width="250" src="images/dens_default.png">
   <em>Resampling</em>
-  <img width="300" src="images/dots.png">
+  <img width="250" src="images/dots.png">
   <em>No Resampling</em>
 </p>
 
