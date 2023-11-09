@@ -24,7 +24,9 @@ Here we compare the difference between both algorithms. In both cases we use a l
 
 <p align="center">
   <img width="300" src="images/dens_default.png",  caption="Resampling">
+  <em>image_caption</em>
   <img width="300" src="images/dots.png",  caption="No Resampling">
+  <em>image_caption</em>
 </p>
 
 We also included the effect of the $\sigma$ parameter that allows to further modify the packing of the spheres for the resampling method. 
