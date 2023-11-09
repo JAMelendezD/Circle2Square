@@ -63,5 +63,4 @@ We also included the effect of the $\sigma$ parameter that allows to further mod
   <em>sigma = 40</em>
 </p>
 
-Eventually for a large enough $\sigma$ ther
-Based on this we finally provide a comparison between both models and the selected value of $\sigma = 11$ that optimizes the average to a value of 1.874 which is only 0.001 off the target value.
+Eventually for a large enough $\sigma$ the spacing converges to a final system. Based on this we can select a final value of $\sigma = 11$ finally provide a comparison between both models and the selected value of $\sigma = 11$ that optimizes the average to a value of 1.874 which is only 0.001 off the target value.
