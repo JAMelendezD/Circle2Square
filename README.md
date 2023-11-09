@@ -37,13 +37,13 @@ We also included the effect of the $\sigma$ parameter that allows to further mod
   <img width="250" src="images/dens_mod_2.png">
   <em>sigma = 2</em>
   <img width="250" src="images/dens_mod_4.png">
-  <em>sigma = 2</em>
+  <em>sigma = 4</em>
   <img width="250" src="images/dens_mod_6.png">
-  <em>sigma = 2</em>
+  <em>sigma = 6</em>
   <img width="250" src="images/dens_mod_8.png">
-  <em>sigma = 2</em>
+  <em>sigma = 8</em>
   <img width="250" src="images/dens_mod_10.png">
-  <em>sigma = 2</em>
+  <em>sigma = 10</em>
   <img width="250" src="images/dens_mod_12.png">
-  <em>sigma = 2</em>
+  <em>sigma = 12</em>
 </p>
