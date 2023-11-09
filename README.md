@@ -1,9 +1,9 @@
 # Circle2Square
 
-Interpolation between a circle and a square the single argument represents the radius of the inner circle
+Interpolation between a circle and a square first argument represents the radius of the inner circle, the second argument is for a given value of sigma
 
 ```
-python gen_mem.py 7
+python gen_mem.py 7 30
 ```
 
 ## Resampling of curves to keep even density
