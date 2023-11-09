@@ -35,7 +35,7 @@ We also included the effect of the $\sigma$ parameter that allows to further mod
 
 <p align="center">
   <img width="250" src="images/dens_mod_2.png">
-  <em>$\simga = 2$</em>
+  <em>$\sigma = 2$</em>
   <img width="250" src="images/dens_mod_4.png">
   <em>$\simga = 2$</em>
   <img width="250" src="images/dens_mod_6.png">
