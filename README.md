@@ -29,29 +29,38 @@ Here we compare the difference between both algorithms. In both cases we use a l
 <p align="center">
   <img width="250" src="images/dots.png">
   <em>No Resampling</em>
-  <img width="250" src="images/dens_default.png">
+  <img width="250" src="images/dens_mod_60.png">
   <em>Resampling</em>
 </p>
 
 We also included the effect of the $\sigma$ parameter that allows to further modify the packing of the spheres for the resampling method. 
 
 <p align="center">
-  <img width="250" src="images/dens_mod_2.png">
+  <img width="300" src="images/dens_mod_2.png">
   <em>sigma = 2</em>
-  <img width="250" src="images/dens_mod_4.png">
+  <img width="300" src="images/dens_mod_4.png">
   <em>sigma = 4</em>
-  <img width="250" src="images/dens_mod_6.png">
-  <em>sigma = 6</em>
-  <img width="250" src="images/dens_mod_8.png">
-  <em>sigma = 8</em>
-  <img width="250" src="images/dens_mod_10.png">
-  <em>sigma = 10</em>
-  <img width="250" src="images/dens_mod_12.png">
-  <em>sigma = 12</em>
-  <img width="250" src="images/dens_mod_14.png">
-  <em>sigma = 14</em>
-  <img width="250" src="images/dens_mod_16.png">
-  <em>sigma = 16</em>
+</p>
+
+<p align="center">
+  <img width="300" src="images/dens_mod_2.png">
+  <em>sigma = 2</em>
+  <img width="300" src="images/dens_mod_4.png">
+  <em>sigma = 4</em>
+</p>
+
+<p align="center">
+  <img width="300" src="images/dens_mod_2.png">
+  <em>sigma = 2</em>
+  <img width="300" src="images/dens_mod_4.png">
+  <em>sigma = 4</em>
+</p>
+
+<p align="center">
+  <img width="300" src="images/dens_mod_2.png">
+  <em>sigma = 2</em>
+  <img width="300" src="images/dens_mod_4.png">
+  <em>sigma = 4</em>
 </p>
 
 Eventually for a large enough $\sigma$ ther
