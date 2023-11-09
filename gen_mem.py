@@ -105,13 +105,16 @@ def generate_interpolation(lambdas, shape1, shape2):
 
     curves = []
     for i in range(len(lambdas)):
-        lamb = lambdas[i]
-        curve = []
-        for j in range(len(shape1[i])):
-            new_x = (1-lamb)*shape1[i][j][0]+lamb*shape2[i][j][0]
-            new_y = (1-lamb)*shape1[i][j][1]+lamb*shape2[i][j][1]
-            curve.append([new_x, new_y])
-        curves.append(np.array(curve))
+        if i == 0:
+            curves.append(shape1[i])
+        else:
+            lamb = lambdas[i]
+            curve = []
+            for j in range(len(shape1[i])):
+                new_x = (1-lamb)*shape1[i][j][0]+lamb*shape2[i][j][0]
+                new_y = (1-lamb)*shape1[i][j][1]+lamb*shape2[i][j][1]
+                curve.append([new_x, new_y])
+            curves.append(np.array(curve))
     return curves
 
 def calculate_lambdas(size, exponent, exp_scale):
@@ -176,10 +179,11 @@ def main():
     for circ, rect, lamb in zip(circles, rectangles, lambdas):
         n_circ, n_rect = len(circ), len(rect)
         n_inter = int(round((1-lamb)*n_circ + lamb*n_rect,0))
-        n_inter = n_inter #- (n_circ-counter)//11
-        
+        n_inter = n_inter - (n_circ-counter) // int(sys.argv[2])
+
         if n_inter % 4 != 0:
-            n_inter = n_inter + (-n_inter % 4)
+            #n_inter = n_inter + (-n_inter % 4) # round up to a multiple of 4
+            n_inter = n_inter // 4 * 4  # round down to a multiple of 4
         num_points.append(n_inter)
         counter += 1
 
@@ -212,8 +216,7 @@ def main():
     zs = np.arange(-height/2, height/2+spacing, spacing)
 
     for z in zs: 
-        for point in new_circles[0]:
-        #for point in circles[0]:
+        for point in curves[0]:
             lines.append(f"{'CA':6s}{point[0]+spacing/2:12.6f}{point[1]+spacing/2:12.6f}{z:12.6f}{1:6d}\n")
             
     for z in [zs[0],zs[-1]]:
