@@ -29,7 +29,7 @@ Here we compare the difference between both algorithms. In both cases we use a l
 <p align="center">
   <img width="250" src="images/dots.png">
   <em>No Resampling</em>
-  <img width="250" src="images/dens_mod_60.png">
+  <img width="250" src="images/dens_mod_40.png">
   <em>Resampling</em>
 </p>
 
@@ -68,16 +68,16 @@ Eventually for a large enough $\sigma$ the spacing converges to a final system.
 ## No interpolation
 
 <p align="center">
-  <img width="250" src="images/nointer_2.png">
-  <em>eps = 2</em>
-  <img width="250" src="images/nointer_2_5.png">
-  <em>eps = 2.5</em>
+  <img width="250" src="images/nointer_05.png">
+  <em>eps = 0.5</em>
+  <img width="250" src="images/nointer_11.png">
+  <em>eps = 1.1</em>
 </p>
 
 <p align="center">
-  <img width="250" src="images/nointer_3.png">
-  <em>eps = 3</em>
-  <img width="250" src="images/nointer_4.png">
-  <em>eps = 4</em>
+  <img width="250" src="images/nointer_15.png">
+  <em>eps = 1.5</em>
+  <img width="250" src="images/nointer_19.png">
+  <em>eps = 1.9</em>
 </p>
 
