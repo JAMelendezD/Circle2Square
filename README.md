@@ -24,7 +24,7 @@ The animation depicts the effect of shifting the exponent of the interpolation f
 
 ## Comparison
 
-Here we compare the difference between both algorithms. In both cases we use a linear interpolation between both shapes. We first compare the difference between the default behaviour of both. A red-white-blue color map is used to show the shortest distance for a given sphere to any other sphere inlcuding periodic boundary conditions (PBC) this help to visualize the difference in the packing from the desired 1.875 value. The values range from 0.5 (red) and -0.5 (blue). Here the main focus is to avoid larges energies due to close contacts since the repulsive wall increases rapidly with distance being slightly further is less problematic since the force decreases to 0 as long as there are no gaps in which water can permeate through
+Here we compare the difference between both algorithms. In both cases we use a linear interpolation between both shapes. We first compare the difference between the default behaviour of both. A red-white-blue color map is used to show the shortest distance for a given sphere to any other sphere inlcuding periodic boundary conditions (PBC) this help to visualize the difference in the packing from the desired 1.875 value. The values range from 0.5 (red) and -0.5 (blue). Here the main focus is to avoid larges energies due to close contacts since the repulsive wall increases rapidly with distance, being slightly further is less problematic since the force decreases to 0 as long as there are no gaps in which water can permeate through
 
 <p align="center">
   <img width="250" src="images/dots.png">
