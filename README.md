@@ -23,9 +23,9 @@ python gen_mem.py 7
 Here we compare the difference between both algorithms. In both cases we use a linear interpolation between both shapes. We first compare the difference between the default behaviour of both. A red-white-blue color map is used to show the shortest distance for a given sphere to any other sphere inlcuding periodic boundary conditions (PBC) this help to visualize the difference in the packing from the desired 1.875 value. The values range from 0.5 (red) and -0.5 (blue).
 
 <p align="center">
-  <img width="300" src="images/dens_default.png",  caption="Resampling">
+  <img width="300" src="images/dens_default.png",  alt>
   <em>image_caption</em>
-  <img width="300" src="images/dots.png",  caption="No Resampling">
+  <img width="300" src="images/dots.png",  alt>
   <em>image_caption</em>
 </p>
 
