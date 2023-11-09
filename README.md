@@ -1,6 +1,6 @@
 # Circle2Square
 
-Interpolation between a circle and a square
+Interpolation between a circle and a square the single argument represents the radius of the inner circle
 
 ```
 python gen_mem.py 7
@@ -8,11 +8,15 @@ python gen_mem.py 7
 
 ## Resampling of curves to keep even density
 
+The animation depicts the effect of shifting the exponent of the interpolation for the method in which the curves are resampled
+
 <p align="center">
   <img width="500" src="images/dens.gif">
 </p>
 
 ## Constant number of points
+
+The animation depicts the effect of shifting the exponent of the interpolation for the method in which the curves have a constant number of points 
 
 <p align="center">
   <img width="500" src="images/dots.gif">
