@@ -28,7 +28,7 @@ Here we compare the difference between both algorithms. In both cases we use a l
 </figure>
 
 <p align="center">
-  <img width="300" src="images/dens_default.png",  alt>
+  <img width="300" src="images/dens_default.png" />
   <em>image_caption</em>
   <img width="300" src="images/dots.png",  alt>
   <em>image_caption</em>
