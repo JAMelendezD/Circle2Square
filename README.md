@@ -26,6 +26,7 @@ Here we compare the difference between both algorithms. In both cases we use a l
 
 <p align="center">
   <img width="300" src="images/dens_default.png">
+  ksjdbvsdkjvbdsj
   <img width="300" src="images/dots.png">
   <em>image_caption</em>
 </p>
