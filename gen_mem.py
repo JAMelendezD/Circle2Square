@@ -81,13 +81,16 @@ def generate_circle(r, s, n):
     '''
     Function to generate a circle given a radius (r) and the spacing (s)
     if the number of points (n) is 0. If it is different then the spacing
-    is computed for the number of given points
+    is computed for the number of given points starting the same way as the
+    square on step to the right of 135 going anticlockwise and ending at 135
     '''
-    
+
     if n == 0:
-        n = int(round(2*np.pi*r/s, 0))
-    
-    angles = np.linspace(3*np.pi/4, -5*np.pi/4, n+1)[1:]
+        a = 2*r*np.arcsin(s/(2*r)) # convert from spacing to arc length
+        n = int(round(2*np.pi*r/a, 0))
+
+    step = (2*np.pi / n)
+    angles = np.linspace(3*np.pi/4-step, 3*np.pi/4-2*np.pi, n)
     x = r*np.cos(angles)
     y = r*np.sin(angles)
     circle = np.array(list(zip(x,y)))
@@ -173,7 +176,7 @@ def main():
     for circ, rect, lamb in zip(circles, rectangles, lambdas):
         n_circ, n_rect = len(circ), len(rect)
         n_inter = int(round((1-lamb)*n_circ + lamb*n_rect,0))
-        n_inter = n_inter - (n_circ-counter)//11
+        n_inter = n_inter #- (n_circ-counter)//11
         
         if n_inter % 4 != 0:
             n_inter = n_inter + (-n_inter % 4)
@@ -192,7 +195,10 @@ def main():
 
     new_circles = []
     for i in range(num_rects):
-        circle = generate_circle(main_radius+spacing*i, spacing, num_points[i])
+        if i == 0:
+            circle = generate_circle(main_radius+spacing*i, spacing, 0)
+        else:
+            circle = generate_circle(main_radius+spacing*i, spacing, num_points[i])
         new_circles.append(circle)
 
     # Interpolate between circles and rectangles 
