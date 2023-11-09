@@ -48,4 +48,4 @@ We also included the effect of the $\sigma$ parameter that allows to further mod
   <em>sigma = 12</em>
 </p>
 
-Based on this we finally provide a comparison between both models and the selected value of $\sigma = 11$ 
+Based on this we finally provide a comparison between both models and the selected value of $\sigma = 11$ that optimizes the average to a value of 1.872 which is only 0.02 off the target value.
