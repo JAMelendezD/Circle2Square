@@ -63,4 +63,21 @@ We also included the effect of the $\sigma$ parameter that allows to further mod
   <em>sigma = 40</em>
 </p>
 
-Eventually for a large enough $\sigma$ the spacing converges to a final system.  
+Eventually for a large enough $\sigma$ the spacing converges to a final system.
+
+## No interpolation
+
+<p align="center">
+  <img width="250" src="images/nointer_2.png">
+  <em>eps = 2</em>
+  <img width="250" src="images/nointer_2_5.png">
+  <em>eps = 2.5</em>
+</p>
+
+<p align="center">
+  <img width="250" src="images/nointer_3.png">
+  <em>eps = 3</em>
+  <img width="250" src="images/nointer_4.png">
+  <em>eps = 4</em>
+</p>
+
